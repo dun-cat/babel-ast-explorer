@@ -14,10 +14,10 @@ jobs:
       # 签出代码
       - name: Check out repository code
         uses: actions/checkout@v2
-        # 安装依赖
+      # 安装依赖
       - name: Install dependencies
-        run: npm ci
-
+        run: npm i
+      # scp 上传
       - name: SCP-Deploy
         uses: appleboy/scp-action@v0.0.1
         with:
