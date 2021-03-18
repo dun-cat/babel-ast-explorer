@@ -30,6 +30,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "./*"
+          source: "./build/"
           target: "/docker_volumes/nginx/sites/tools/babel-ast-explorer"
           debug: true
