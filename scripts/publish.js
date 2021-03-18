@@ -2,7 +2,7 @@ const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs-extra');
 const chalk = require('chalk');
-const GIT_URL = 'https://github.com/tanhauhau/babel-ast-explorer.git';
+const GIT_URL = 'https://github.com/dun-cat/babel-ast-explorer.git';
 
 (async function() {
   const cacheFolder = path.join(require('os').homedir(), '.cache/babel-ast-explorer');
