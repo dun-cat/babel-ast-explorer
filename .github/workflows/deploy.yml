@@ -25,9 +25,9 @@ jobs:
         run: npm run build
       # scp 上传
       - name: SCP-Deploy
-        working-directory: ./build/
         uses: appleboy/scp-action@master
         with:
+          entrypoint: ./beforeActions.sh
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
