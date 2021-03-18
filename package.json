@@ -60,7 +60,7 @@
     "husky": "^1.3.1",
     "node-sass": "^4.13.0"
   },
-  "homepage": "https://lihautan.com/babel-ast-explorer",
+  "homepage": "https://www.lumin.tech/tools/babel-ast-explorer",
   "scripts": {
     "postinstall": "node scripts/install-babel-standalone.js",
     "start": "node scripts/start.js",
