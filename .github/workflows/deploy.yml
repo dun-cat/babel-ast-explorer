@@ -17,6 +17,9 @@ jobs:
       # 安装依赖
       - name: Install dependencies
         run: npm i
+        # 列出文件
+      - name: List files
+        run: 'ls ./'
       # scp 上传
       - name: SCP-Deploy
         uses: appleboy/scp-action@master
@@ -26,3 +29,4 @@ jobs:
           key: ${{ secrets.KEY }}
           source: "./build/*"
           target: "/docker_volumes/nginx/sites/tools/babel-ast-explorer"
+          debug: true
