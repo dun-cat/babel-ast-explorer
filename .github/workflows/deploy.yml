@@ -17,6 +17,9 @@ jobs:
       # 安装依赖
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
+      - name: Working Directory
+        run: pwd && ls
       # 构建
       - name: Build Project
         run: npm run build
