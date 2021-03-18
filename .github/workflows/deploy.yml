@@ -20,10 +20,9 @@ jobs:
       # 构建
       - name: Build Project
         run: npm run build
-        
       # scp 上传
       - name: SCP-Deploy
-        run: 'cd ./build/'
+        working-directory: ./build/
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
