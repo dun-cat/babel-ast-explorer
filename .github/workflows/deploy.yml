@@ -23,6 +23,6 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          source: "tests/a.txt,tests/b.txt"
-          target: "/docker_volumes/nginx/sites/babel-ast-explorer"
+          key: ${{ secrets.KEY }}
+          source: "./build/*"
+          target: "/docker_volumes/nginx/sites/tools/babel-ast-explorer"
