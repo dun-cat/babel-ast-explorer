@@ -21,7 +21,8 @@ jobs:
       - name: SCP-Deploy
         uses: appleboy/scp-action@v0.0.1
         with:
-          host: ${{ secrets.HOST }}
+          host: "47.105.45.5"
+          # host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           source: "./build/*"
