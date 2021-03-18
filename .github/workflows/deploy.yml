@@ -17,9 +17,12 @@ jobs:
       # 安装依赖
       - name: Install dependencies
         run: npm i
-        # 列出文件
+      # 构建
+      - name: Install dependencies
+        run: npm run build
+      # 列出文件
       - name: List files
-        run: 'ls ./'
+        run: 'ls ./build/'
       # scp 上传
       - name: SCP-Deploy
         uses: appleboy/scp-action@master
