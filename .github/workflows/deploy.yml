@@ -1,13 +1,28 @@
-name: Greetings
+name: Deploy self host
 
-on: [pull_request, issues]
+on:
+  push:
+    branches: [dev]
 
 jobs:
   greeting:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [10]
     steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: 'Message that will be displayed on users first issue'
-        pr-message: 'Message that will be displayed on users first pull request'
+      # 签出代码
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        # 安装依赖
+      - name: Install dependencies
+        run: npm ci
+
+      - name: SCP-Deploy
+        uses: appleboy/scp-action@v0.0.1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          source: "tests/a.txt,tests/b.txt"
+          target: "/docker_volumes/nginx/sites/babel-ast-explorer"
