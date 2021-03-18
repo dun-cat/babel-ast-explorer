@@ -27,7 +27,7 @@ jobs:
       - name: SCP-Deploy
         uses: appleboy/scp-action@master
         with:
-          entrypoint: ./beforeActions.sh
+          entrypoint: ./entrypoint.sh
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
