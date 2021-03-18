@@ -18,11 +18,11 @@ jobs:
       - name: Install dependencies
         run: npm i
       # 构建
-      - name: Install dependencies
+      - name: Build Project
         run: npm run build
-      # 列出文件
-      - name: List files
-        run: 'ls ./build/'
+      # 进入构建目录
+      - name: 'Enter build folder'
+        run: 'cd ./build/'
       # scp 上传
       - name: SCP-Deploy
         uses: appleboy/scp-action@master
@@ -30,6 +30,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: "./build/*"
+          source: "./*"
           target: "/docker_volumes/nginx/sites/tools/babel-ast-explorer"
           debug: true
